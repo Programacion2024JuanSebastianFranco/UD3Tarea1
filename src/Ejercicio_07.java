@@ -51,7 +51,7 @@ public class Ejercicio_07 {
                 case 7 -> { // Piramide
 
                     int num = dameUnNumero();
-                    String simbolo = dameTexto();
+                    String simbolo = simbolo();
                     piramide(num,simbolo);
                 }
                 case 8 -> { // Seri Fibonnacci
