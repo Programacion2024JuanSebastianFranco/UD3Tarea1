@@ -27,6 +27,38 @@ public class Ejercicio_07 {
                     mostarPrimos(num);
 
                 }
+                case 4 -> { //Sumar numeros
+                    System.out.println("Suma de Enteros");
+                    int num = dameUnNumero();
+                    int suma = sumar(num);
+                    System.out.println("La suma total de " + num + " numeros enteros son: " + suma);
+
+                }
+                case 5 -> { //Multiplicar Enteros
+
+                    System.out.println("Multiplicacion de Enteros");
+                    int num = dameUnNumero();
+                    int multi = multiplicar(num);
+                    System.out.println("La multiplicacion total de " + num + " numeros enteros son: " + multi);
+
+                }
+                case 6 -> { //Potencia numeros
+                    int num1 = dameUnNumero();
+                    int num2 = dameUnNumero();
+                    potencia(num1, num2);
+
+                }
+                case 7 -> { // Piramide
+
+                    int num = dameUnNumero();
+                    String simbolo = dameTexto();
+                    piramide(num,simbolo);
+                }
+                case 8 -> { // Seri Fibonnacci
+
+                    int num = dameUnNumero();
+                    fibonacci(num);
+                }
             }
 
         } while (op != 9);
@@ -74,15 +106,25 @@ public class Ejercicio_07 {
 
 
     /**
-     * Esta funcion pide texto
+     * Esta funcion pide texto (La funcion no funciona, no tengo idea porque)
      *
      * @return nombre
      */
     public static String dameTexto() {
         System.out.println("Introduce el nombre: ");
         String nombre = scan.nextLine();
-
         return nombre;
+    }
+
+
+    /**
+     * Aqui se pide un simbolo para hacer la piramide (EL string no sirve por lo tanto la piramide tampoco)
+     * @return simbolo
+     */
+    public static String simbolo() {
+        System.out.println("Introduce el simbolo: ");
+        String simbolo = scan.nextLine();
+        return simbolo;
     }
 
 
@@ -113,7 +155,10 @@ public class Ejercicio_07 {
     }
 
 
-
+    /**
+     * Aqui revisa si un numero es primo o no
+     * @param numero
+     */
     public static boolean numeroPrimo(int numero) {
         boolean esPrimo = true;
 
@@ -130,20 +175,109 @@ public class Ejercicio_07 {
     }
 
 
-
-    public static void mostarPrimos(int cantidad){
+    /**
+     * Aqui nos devuelve los numeros primos hasta donde el usuario pide
+     * @param cantidad
+     */
+    public static void mostarPrimos(int cantidad) {
         int contador = 0;
         int numero = 2;
 
         System.out.println("Primeros " + cantidad + " numeros primos: ");
 
-        while(contador < cantidad){
-            if (numeroPrimo(numero)){
+        while (contador < cantidad) {
+            if (numeroPrimo(numero)) {
                 System.out.print(numero + " ");
                 contador++;
             }
-                numero++;
+            numero++;
         }
         System.out.println(" ");
+    }
+
+
+    /**
+     * En este suma y devuelve el total
+     * @param primero
+     * @return suma
+     */
+    public static int sumar(int primero) {
+        int suma = 0;
+
+        for (int i = 1; i <= primero; i++){
+            suma+= i;
+        }
+        return suma;
+    }
+
+
+    /**
+     * En este multiplica y devuelve el valor
+     * @param primero
+     * @return multiplicar
+     */
+    public static int multiplicar(int primero) {
+        int multiplicar = 1;
+
+        for (int i = 1; i <= primero; i++){
+            multiplicar*= i;
+        }
+        return multiplicar;
+    }
+
+
+    /**
+     * Aqui potenciamos el numero hasta la potencia deseadq
+     * @param primero
+     * @param segundo
+     */
+    public static void potencia(int primero, int segundo){
+
+        int resultado = 1;
+
+        for (int i = 0; i < segundo; i++){
+            resultado*=primero;
+        }
+        System.out.println("El resultado de " + primero + " elevado a " + segundo + " da como resultado: " + resultado);
+
+    }
+
+
+    /**
+     * En este bloque hacemos la piramide y la imprimimos
+     * @param numero
+     * @param simbolo
+     */
+    public static void piramide(int numero,String simbolo){
+
+        for (int i = 1; i <= numero; i++){
+            for (int j = 1; j <= i; j++){
+                System.out.println(simbolo);
+            }
+            System.out.println();
+        }
+    }
+
+
+    /**
+     * Por ultimo, aqui generamos e imprimimos la serie de fibonacci
+     * @param numero
+     */
+    public static void fibonacci(int numero){
+
+        int num = 0;
+        int num2 = 1;
+        int num3 = 0;
+
+        System.out.print("0" + " 1 ");
+
+        for (int i = 2; i < numero; i++){
+
+            num3 = num + num2;
+            num = num2;
+            num2 = num3;
+            System.out.print(num3 + " ");
+        }
+        System.out.println();
     }
 }
