@@ -16,16 +16,31 @@ public class Actividad_2 {
 
             switch (opc){
 
-                case 1 -> {
+                case 1 -> { //Ultima cifra
                     System.out.println("Ultima cifra: ");
                     num = Actividad_1.dameUnNumero();
                     int ultimaCifra = ultimaCifra(num);
                     System.out.println(ultimaCifra);
                 }
-                case 2 -> {
+                case 2 -> { //Quitar Ultimo numero
                     num = Actividad_1.dameUnNumero();
                     int quitarUltimo = quitarUltimo(num);
                     System.out.println(quitarUltimo);
+                }
+                case 3 -> { //Voltear Numeros
+                    num = Actividad_1.dameUnNumero();
+                    int voltearNum = voltearNum(num);
+                    System.out.println(voltearNum);
+                }
+                case 4 -> {
+                    num = Actividad_1.dameUnNumero();
+                    boolean capicua = capicua(num);
+                    if (capicua == true){
+                        System.out.println("tu numero es capicuo");
+                    }else {
+                        System.out.println("Tu numero no es capicuo");
+                    }
+
                 }
 
             }
@@ -33,6 +48,34 @@ public class Actividad_2 {
         }while(opc != 10);
 
 
+    }
+
+    public static int voltearNum(int entero) {
+        int num;
+        int invertido = 0;
+        int resto;
+
+        num = entero;
+
+        while(num > 0){
+            resto = num % 10;
+            invertido = invertido * 10 + resto;
+            num /= 10;
+        }
+
+        return invertido;
+    }
+
+    public static boolean capicua(int entero){
+        boolean esCapicua = false;
+        int num = entero;
+        int volt = voltearNum(entero);
+
+        if (num == volt){
+            esCapicua = true;
+        }
+
+        return esCapicua;
     }
 
     public static int menu(){
@@ -52,13 +95,13 @@ public class Actividad_2 {
 
 
 
-    private static int quitarUltimo(int entero) {
+    public static int quitarUltimo(int entero) {
         int numero;
 
         if (entero < 10){
             numero = -1;
         } else {
-            numero = entero%10;
+            numero = entero/10;
         }
         return numero;
     }
