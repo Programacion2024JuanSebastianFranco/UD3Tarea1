@@ -97,7 +97,7 @@ public class Actividad_1 {
         System.out.println("Introduce un numero: ");
         while (!scan.hasNextInt()) {
             System.out.println("Entrada invalida. Porfavor ingresa un numero valido: ");
-            scan.nextInt();
+            scan.next();
         }
 
         int numero = scan.nextInt();
