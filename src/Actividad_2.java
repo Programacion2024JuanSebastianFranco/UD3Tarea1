@@ -51,6 +51,8 @@ public class Actividad_2 {
                 }
                 case 7 -> {
                     num = Actividad_1.dameUnNumero();
+                    int binario = binarioToDecimal(num);
+                    System.out.println(binario);
 
                 }
                 case 8 -> {
@@ -68,6 +70,21 @@ public class Actividad_2 {
         } while (opc != 10);
 
 
+    }
+
+    public static int menu() {
+
+        int opc;
+
+        do {
+
+            System.out.println("MENU\n1. Dame ultimo\n2. Quita ultimo\n3. Voltea numero\n4. Es capicua\n5. Muestra los capicuas" +
+                    "\n6. Quita por detras (sin implementar)\n7. De binario a Decimal\n8. De binario a Octal\n9. De binario a Hexadecimal" +
+                    "\n10. Salir");
+            opc = scan.nextInt();
+
+        } while (opc < 1 || opc > 10);
+        return opc;
     }
 
     public static int voltearNum(int entero) {
@@ -97,22 +114,6 @@ public class Actividad_2 {
         }
 
         return esCapicua;
-    }
-
-
-    public static int menu() {
-
-        int opc;
-
-        do {
-
-            System.out.println("MENU\n1. Dame ultimo\n2. Quita ultimo\n3. Voltea numero\n4. Es capicua\n5. Muestra los capicuas" +
-                    "\n6. Quita por detras (sin implimentar)\n7. De binario a decimal\n8. De binario a octal\n9. De binario a Hexadecimal" +
-                    "\n10. Salir");
-            opc = scan.nextInt();
-
-        } while (opc < 1 || opc > 10);
-        return opc;
     }
 
 
@@ -153,9 +154,29 @@ public class Actividad_2 {
     }
 
 
-    public static void binarioToDecimal(int entero) {
+    public static int binarioToDecimal(int entero) {
+        int rest = 0;
+        int ultimo;
+        int contExp = 0;
 
+        do {
+            ultimo = ultimaCifra(entero);
+            entero = quitarUltimo(entero);
+
+            if (ultimo == 1){
+                rest += Actividad_1.potencia(2, contExp);
+            }
+            contExp++;
+        } while(entero != -1);
+
+        return rest;
     }
 
+
+    public static void binarioToOctal (int entero){
+
+
+
+    }
 
 }

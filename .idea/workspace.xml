@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce7caa2b-149a-4dc6-942c-568e35bb1225" name="Changes" comment="Finalizado">
+    <list default="true" id="ce7caa2b-149a-4dc6-942c-568e35bb1225" name="Changes" comment="Binario a Decimal por empezar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actividad_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actividad_1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Actividad_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actividad_2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,13 +162,22 @@
       <option name="project" value="LOCAL" />
       <updated>1731089722959</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Binario a Decimal por empezar">
+      <option name="closed" value="true" />
+      <created>1731345966862</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1731345966862</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hoy" />
     <MESSAGE value="Finalizado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalizado" />
+    <MESSAGE value="Binario a Decimal por empezar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Binario a Decimal por empezar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
