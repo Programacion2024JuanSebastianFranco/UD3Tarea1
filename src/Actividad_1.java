@@ -239,7 +239,6 @@ public class Actividad_1 {
             resultado*=primero;
         }
         System.out.println("El resultado de " + primero + " elevado a " + segundo + " da como resultado: " + resultado);
-
     }
 
 
