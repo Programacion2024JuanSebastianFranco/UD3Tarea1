@@ -139,17 +139,14 @@ public class Actividad_2 {
         int capicuas = 10;
         int contador = 0;
 
-        if (entero > 10) {
-            while (contador < entero) {
-                if (capicua(capicuas)) {
-                    System.out.print(capicuas + " ");
-                    contador++;
-                }
-                capicuas++;
+        while (contador < entero) {
+            if (capicua(capicuas)) {
+                System.out.print(capicuas + " ");
+                contador++;
             }
-        } else {
-            System.out.println("Numero mayor que 10.");
+            capicuas++;
         }
+
         System.out.println();
     }
 

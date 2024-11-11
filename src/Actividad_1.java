@@ -231,14 +231,15 @@ public class Actividad_1 {
      * @param primero
      * @param segundo
      */
-    public static void potencia(int primero, int segundo){
+    public static int potencia(int primero, int segundo) {
 
         int resultado = 1;
 
-        for (int i = 0; i < segundo; i++){
-            resultado*=primero;
+        for (int i = 0; i < segundo; i++) {
+            resultado *= primero;
         }
-        System.out.println("El resultado de " + primero + " elevado a " + segundo + " da como resultado: " + resultado);
+        return resultado;
+
     }
 
 
