@@ -14,7 +14,7 @@ public class Actividad_2 {
 
             opc = menu();
 
-            switch (opc){
+            switch (opc) {
 
                 case 1 -> { //Ultima cifra
                     System.out.println("Ultima cifra: ");
@@ -35,17 +35,37 @@ public class Actividad_2 {
                 case 4 -> {
                     num = Actividad_1.dameUnNumero();
                     boolean capicua = capicua(num);
-                    if (capicua == true){
+                    if (capicua == true) {
                         System.out.println("tu numero es capicuo");
-                    }else {
+                    } else {
                         System.out.println("Tu numero no es capicuo");
                     }
+                }
+                case 5 -> {
+                    num = Actividad_1.dameUnNumero();
+                    listCapicua(num);
+                }
+                case 6 -> {
+                    num = Actividad_1.dameUnNumero();
 
                 }
+                case 7 -> {
+                    num = Actividad_1.dameUnNumero();
+
+                }
+                case 8 -> {
+                    num = Actividad_1.dameUnNumero();
+
+                }
+                case 9 -> {
+                    num = Actividad_1.dameUnNumero();
+
+                }
+                default -> System.out.println("Hasta Luego");
 
             }
 
-        }while(opc != 10);
+        } while (opc != 10);
 
 
     }
@@ -57,7 +77,7 @@ public class Actividad_2 {
 
         num = entero;
 
-        while(num > 0){
+        while (num > 0) {
             resto = num % 10;
             invertido = invertido * 10 + resto;
             num /= 10;
@@ -66,19 +86,21 @@ public class Actividad_2 {
         return invertido;
     }
 
-    public static boolean capicua(int entero){
+
+    public static boolean capicua(int entero) {
         boolean esCapicua = false;
         int num = entero;
         int volt = voltearNum(entero);
 
-        if (num == volt){
+        if (num == volt) {
             esCapicua = true;
         }
 
         return esCapicua;
     }
 
-    public static int menu(){
+
+    public static int menu() {
 
         int opc;
 
@@ -94,21 +116,46 @@ public class Actividad_2 {
     }
 
 
-
     public static int quitarUltimo(int entero) {
         int numero;
 
-        if (entero < 10){
+        if (entero < 10) {
             numero = -1;
         } else {
-            numero = entero/10;
+            numero = entero / 10;
         }
         return numero;
     }
 
+
     public static int ultimaCifra(int entero) {
-        int ultimo = entero%10;
+        int ultimo = entero % 10;
         return ultimo;
     }
+
+
+    public static void listCapicua(int entero) {
+        int capicuas = 10;
+        int contador = 0;
+
+        if (entero > 10) {
+            while (contador < entero) {
+                if (capicua(capicuas)) {
+                    System.out.print(capicuas + " ");
+                    contador++;
+                }
+                capicuas++;
+            }
+        } else {
+            System.out.println("Numero mayor que 10.");
+        }
+        System.out.println();
+    }
+
+
+    public static void binarioToDecimal(int entero) {
+
+    }
+
 
 }
