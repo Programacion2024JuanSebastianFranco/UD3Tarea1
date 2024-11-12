@@ -1,4 +1,3 @@
-import java.util.Enumeration;
 import java.util.Scanner;
 
 public class Actividad_2 {
@@ -32,7 +31,7 @@ public class Actividad_2 {
                     int voltearNum = voltearNum(num);
                     System.out.println(voltearNum);
                 }
-                case 4 -> {
+                case 4 -> { //Comprobar si es capicua un numero
                     num = Actividad_1.dameUnNumero();
                     boolean capicua = capicua(num);
                     if (capicua == true) {
@@ -41,21 +40,21 @@ public class Actividad_2 {
                         System.out.println("Tu numero no es capicuo");
                     }
                 }
-                case 5 -> {
+                case 5 -> { //Mostrar lista de capicuas
                     num = Actividad_1.dameUnNumero();
                     listCapicua(num);
                 }
-                case 6 -> {
-                    num = Actividad_1.dameUnNumero();
+                case 6 -> { //No se hace
+                    System.out.println("En Mantenimiento");
 
                 }
-                case 7 -> {
+                case 7 -> { //Convertir binario a decimal
                     num = Actividad_1.dameUnNumero();
                     int binario = binarioToDecimal(num);
                     System.out.println(binario);
 
                 }
-                case 8 -> {
+                case 8 -> { //Convertir de Binario a Octal
                     num = Actividad_1.dameUnNumero();
 
                 }
@@ -172,7 +171,14 @@ public class Actividad_2 {
 
     public static void binarioToOctal (int entero){
 
+        int oct = 0;
+        int multi = 1;
 
+        while (entero > 0){
+
+            int grupo = 0; //Tengo que hacer la recoleccion de digitos
+
+        }
 
     }
 
