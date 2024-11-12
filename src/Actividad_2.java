@@ -1,7 +1,12 @@
+/**
+ * @autor Juan Sebastian Franco Castro
+ */
+
 import java.util.Scanner;
 
 public class Actividad_2 {
 
+    //El escaner para pedir los valores al usuario
     final static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -56,9 +61,11 @@ public class Actividad_2 {
                 }
                 case 8 -> { //Convertir de Binario a Octal
                     num = Actividad_1.dameUnNumero();
+                    int octal = binarioToOctal(num);
+                    System.out.println(octal);
 
                 }
-                case 9 -> {
+                case 9 -> { //Sin hacer
                     num = Actividad_1.dameUnNumero();
 
                 }
@@ -71,6 +78,10 @@ public class Actividad_2 {
 
     }
 
+    /**
+     * El menu que sera en bucle para las respuestas del usuario
+     * @return opc
+     */
     public static int menu() {
 
         int opc;
@@ -86,6 +97,12 @@ public class Actividad_2 {
         return opc;
     }
 
+
+    /**
+     * Aqui haremos que los numeros introducidos por el usuario se devuelvan alreves
+     * @param entero
+     * @return invertido
+     */
     public static int voltearNum(int entero) {
         int num;
         int invertido = 0;
@@ -103,6 +120,11 @@ public class Actividad_2 {
     }
 
 
+    /**
+     * Aqui haremos una verificacion sobre si un valor que nos dan es capicua
+     * @param entero
+     * @return esCapicua
+     */
     public static boolean capicua(int entero) {
         boolean esCapicua = false;
         int num = entero;
@@ -116,6 +138,11 @@ public class Actividad_2 {
     }
 
 
+    /**
+     * Aqui quitaremos el ultimo digito del numero del usuario
+     * @param entero
+     * @return numero
+     */
     public static int quitarUltimo(int entero) {
         int numero;
 
@@ -128,12 +155,21 @@ public class Actividad_2 {
     }
 
 
+    /**
+     * Aqui mostraremos el ultimo numero del valor del usuario
+     * @param entero
+     * @return ultimo
+     */
     public static int ultimaCifra(int entero) {
         int ultimo = entero % 10;
         return ultimo;
     }
 
 
+    /**
+     * Aqui mostraremos una lista de capicuas al usuario dependiendo del valor que nos diga
+     * @param entero
+     */
     public static void listCapicua(int entero) {
         int capicuas = 10;
         int contador = 0;
@@ -150,6 +186,11 @@ public class Actividad_2 {
     }
 
 
+    /**
+     * Aqui convertiremos los valores binarios a numero decimales
+     * @param entero
+     * @return rest
+     */
     public static int binarioToDecimal(int entero) {
         int rest = 0;
         int ultimo;
@@ -169,17 +210,23 @@ public class Actividad_2 {
     }
 
 
-    public static void binarioToOctal (int entero){
+    /**
+     * Aqui convertiremos los binarios a valor octal
+     * @param binario
+     * @return oct
+     */
+    public static int binarioToOctal (int binario) {
 
         int oct = 0;
-        int multi = 1;
+        int pot = 1;
 
-        while (entero > 0){
-
-            int grupo = 0; //Tengo que hacer la recoleccion de digitos
-
-        }
-
+        while (binario > 0) {
+            int grupo = binario %1000;
+            int digOct = binarioToDecimal(grupo)  ;
+            oct += digOct * pot;
+            pot *= 10;
+            binario /=1000;
+        }  return oct;
     }
 
 }
